@@ -1,0 +1,137 @@
+**Data 605 - Assignment 13**
+
+**Hazal Gunduz**
+
+**1.** Use integration by substitution to solve the integral below.
+
+$\int{4e^{-7x}dx}$
+
+u = -7x du = -7dx $-\frac{du}{7} = dx$
+
+$\frac{-4}{7}\int{e^{u}du}$
+
+$\frac{-4}{7}e^u + c$
+
+$\frac{-4}{7}e^{-7x} + c$
+
+**2.** Biologists are treating a pond contaminated with bacteria. The level of contamination is changing at a rate of $\frac{dN}{dt} = - \frac{3150}{t^4} - 220$ bacteria per cubic centimeter per day, where t is the number of days since treatment began. Find a function N( t ) to estimate the level of contamination if the level after 1 day was 6530 bacteria per cubic centimeter.
+
+$\int{(\frac{-3150}{t^4} - 220}dt$
+
+$\int{({-3150t^{-4}} - 220)}dt$
+
+$\int{-3150t^{-4}dt - \int -220}dt$
+
+$-3150 \int t^{-4}dt - 220 \int dt$
+
+$-3150 \frac{-1}{3}t^{-3} - 220t$
+
+$N(t) = \frac{1050}{t^{3}} - 220t + c$
+
+$6530 = \frac{1050}{1^{3}} - 220(1) + c$
+
+6530 = 1050 - 220 + c
+
+6530 - 1050 + 220 = c
+
+5700 = c
+
+$N(t) = \frac{1050}{t^{3}} - 220t + 5700$
+
+**3.** Find the total area of the red rectangles in the figure below, where the equation of the line is f(x) = 2x - 9.
+
+![](ddd.png){width="428"}
+
+f(x) = 2x - 9
+
+$\int_{4.5}^{8.5} (2x - 9)dx$
+
+(2 * $x^2$ - 9x) $|_{4.5}^{8.5}$
+
+$(8.5^2 - 9 * (8.5)) - (4.5^2 - 9 * (4.5))$
+
+= 16
+
+**4.** Find the area of the region bounded by the graphs of the given equations.
+
+$y = x^2 - 2x - 2, y = x + 2$
+
+Enter your answer below.
+
+```{r}
+y1 <- function(x) {x^2 - (2 * x) -2}
+y2 <- function(x) {x + 2}
+
+curve(y1, from = -6, to = 6, col = 2)
+curve(y2, from = -6, to = 6, add = TRUE, col = 4)
+```
+
+```{r}
+integrate(y1,-1, 4)
+integrate(y2,-1, 4)
+
+area <- 17.5 - (-3.33)
+area
+```
+
+**5.** A beauty supply store expects to sell 110 flat irons during the next year. It costs $3.75 to store one flat iron for one year. There is a fixed cost of $8.25 for each order. Find the lot size and the number of orders per year that will minimize inventory costs.
+
+n = number of orders per year
+
+x = number of flat iron to order per year
+
+x / 2 = average inventory level
+
+Store cost = 3.75 * (x / 2) = 1.875x
+
+Order cost = 8.25 * (110 / x) = 907.5 / x
+
+Inventory cost = 1.875x + (907.5 / x)
+
+1.875 - 907.5 * x - 2 = 0
+
+x = 22
+
+orders per year = 110 / n = 22
+
+n = 5
+
+**6.** Use integration by parts to solve the integral below.
+
+$\int In(9x) . x^{6}dx$
+
+uv -$\int$ vdu
+
+u = In(9x)
+
+du = $\frac{1}{x}dx$
+
+dv = $x^6$
+
+v = $\frac{1}{7}x^7$
+
+$\frac{x^7In(9x)}{7} - \int \frac{1}{7}x^7 \frac{1}{x}dx$
+
+$\frac{x^7In(9x)}{7} - \frac{1}{7} \int \frac{x^7}{x}dx$
+
+$\frac{x^7In(9x)}{7} - \frac{1}{7} \int {x^6}dx$
+
+$\frac{x^7In(9x)}{7} - \frac{1}{7} (\frac{x^7}{7}) + C$
+
+$\frac{x^7In(9x)}{7} - \frac{x^7}{49} + C$
+
+**7.** Determine whether f(x) is a probability density function on the interval $\left[1, e^6 \right]$. If not, determine the value of the definite integral.
+
+$f(x) = \frac{1}{64}$
+
+$\int_{1}^{e^6} \frac{1}{6x}dx$
+
+$\frac{1}{6} \int_{1}^{e^6} \frac{1}{x}dx$
+
+$\frac{1}{6} (In(e^6) - In(1))$
+
+$\frac{1}{6}(6 - 0) = 1$
+
+RPubs = > https://rpubs.com/gunduzhazal/1035657
+
+
